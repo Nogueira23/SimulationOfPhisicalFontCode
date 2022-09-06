@@ -1,10 +1,3 @@
----
-attachments: [Face1.png]
-title: Software Educacional Sobre Física
-created: '2022-09-06T13:03:54.507Z'
-modified: '2022-09-06T13:55:41.458Z'
----
-
 # Software Educacional Sobre Física
 
 ## Ideia
