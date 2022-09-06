@@ -2,41 +2,7 @@ import pygame
 from random import uniform
 import math
 import sys
-
-class Vectorization():
-    def __init__(self):
-        self.origin = [0,0]
-        self.i = [1,0]
-        self.j = [0,1]
-    
-    def vector(self, xp, yp):
-        return [xp, yp]
-    
-    def diference(self, p1, p2):
-        d = [p1[0]-p2[0], p1[1] - p2[1]]
-        return d
-
-    def sum(self, p1, p2):
-        s = [p1[0]+p2[0], p1[1] + p2[1]]
-        return s
-
-    def module(self, p):
-        module_p = (p[0]**2 + p[1]**2)**(1/2)
-        return module_p
-    
-    def in_product(self, p1, p2):
-        p = p1[0]*p2[0] +  p2[1]*p1[1]
-        return p
-    
-    def projectation(self, origin, cord: str):
-        if cord == 'x':
-            origin_base_x = self.in_product(self.i, origin)*self.i[0]
-            origin_base_y = self.in_product(self.i, origin)*self.i[1]
-            return [origin_base_x, origin_base_y]
-        if cord == 'y':
-            origin_base_x = self.in_product(self.j, origin)*self.j[0]
-            origin_base_y = self.in_product(self.j, origin)*self.j[1]
-            return [origin_base_x, origin_base_y]
+from Vectorization import Vectorization
 
 class GameStage():
     def __init__(self):
@@ -206,7 +172,10 @@ class GameStage():
                     for particula in position_e1f.keys():
                         if particula == '0':
                             if position_e1f[particula][0] >= x_min:
-                                position_e1f[particula][2][0] = True
+                                if position_e1f[particula][2][0] == False:
+                                    position_e1f[particula][2][0] = True
+                                else:
+                                    position_e1f[particula][2][0] = False
                             if position_e1f[particula][1] >= yb + barra.get_height()/4:
                                 position_e1f[particula][2][3] = True
                             if position_e1f[particula][1] <= yb + barra.get_height()/4:
@@ -220,7 +189,10 @@ class GameStage():
                                 position_e1f[particula][2][2] = True
                         if particula == '2':
                             if position_e1f[particula][0] >= x_min:
-                                position_e1f[particula][2][0] = True
+                                if position_e1f[particula][2][0] == False:
+                                    position_e1f[particula][2][0] = True
+                                else:
+                                    position_e1f[particula][2][0] = False
                             if position_e1f[particula][1] >= yb + (2*barra.get_height())/4:
                                 position_e1f[particula][2][3] = True
                             if position_e1f[particula][1] <= yb + (2*barra.get_height())/4:
@@ -234,7 +206,10 @@ class GameStage():
                                 position_e1f[particula][2][2] = True
                         if particula == '4':
                             if position_e1f[particula][0] >= x_min:
-                                position_e1f[particula][2][0] = True
+                                if position_e1f[particula][2][0] == False:
+                                    position_e1f[particula][2][0] = True
+                                else:
+                                    position_e1f[particula][2][0] = False
                             if position_e1f[particula][1] >= yb + (3*barra.get_height())/4:
                                 position_e1f[particula][2][3] = True
                             if position_e1f[particula][1] <= yb + (3*barra.get_height())/4:
@@ -364,7 +339,10 @@ class GameStage():
                     for particula in position_e1f.keys():
                         if particula == '0':
                             if position_e1f[particula][0] >= x_min:
-                                position_e1f[particula][2][0] = True
+                                if position_e1f[particula][2][0] == False:
+                                    position_e1f[particula][2][0] = True
+                                else:
+                                    position_e1f[particula][2][0] = False
                             if position_e1f[particula][1] >= yb + barra.get_height()/4:
                                 position_e1f[particula][2][3] = True
                             if position_e1f[particula][1] <= yb + barra.get_height()/4:
@@ -378,7 +356,10 @@ class GameStage():
                                 position_e1f[particula][2][2] = True
                         if particula == '2':
                             if position_e1f[particula][0] >= x_min:
-                                position_e1f[particula][2][0] = True
+                                if position_e1f[particula][2][0] == False:
+                                    position_e1f[particula][2][0] = True
+                                else:
+                                    position_e1f[particula][2][0] = False
                             if position_e1f[particula][1] >= yb + (2*barra.get_height())/4:
                                 position_e1f[particula][2][3] = True
                             if position_e1f[particula][1] <= yb + (2*barra.get_height())/4:
@@ -392,7 +373,10 @@ class GameStage():
                                 position_e1f[particula][2][2] = True
                         if particula == '4':
                             if position_e1f[particula][0] >= x_min:
-                                position_e1f[particula][2][0] = True
+                                if position_e1f[particula][2][0] == False:
+                                    position_e1f[particula][2][0] = True
+                                else:
+                                    position_e1f[particula][2][0] = False
                             if position_e1f[particula][1] >= yb + (3*barra.get_height())/4:
                                 position_e1f[particula][2][3] = True
                             if position_e1f[particula][1] <= yb + (3*barra.get_height())/4:
